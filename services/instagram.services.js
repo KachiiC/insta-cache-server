@@ -1,4 +1,6 @@
 const axios = require("axios");
+const { InstagramHelper } = require("../helpers/instagram.helper");
+const { dummyData } = require("./dummyData");
 
 const getInstagramData = async () => {
   try {
@@ -12,8 +14,8 @@ const getInstagramData = async () => {
     };
 
     const res = await axios.request(options);
-    
-    return res.data;
+
+    return InstagramHelper(res.data);
   } catch (err) {
     console.log(err);
     throw err;

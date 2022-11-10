@@ -4,7 +4,7 @@ const { shortCache } = require("../middleware/cache");
 const getInstagramList = async (ctx) => {
   try {
     const resData = await getInstagramData();
-    shortCache.set("instagram-list", resData);
+    shortCache.set("insta-list", resData);
     ctx.body = resData;
     ctx.status = 200;
   } catch (err) {
